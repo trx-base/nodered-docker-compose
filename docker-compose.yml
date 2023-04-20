@@ -11,6 +11,8 @@ services:
     restart: unless-stopped
     volumes:
       - ./volumes/data:/data
+    environment:
+      - TZ=${TZ}
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.$COMPOSE_PROJECT_NAME.rule=Host(`$DOMAIN`)"
