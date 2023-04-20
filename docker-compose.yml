@@ -8,6 +8,7 @@ services:
   nodered:
     container_name: $COMPOSE_PROJECT_NAME
     image: nodered/node-red:latest
+    restart: unless-stopped
     volumes:
       - ./volumes/data:/data
     labels:
